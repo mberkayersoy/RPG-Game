@@ -1,14 +1,44 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using RPG.Movement;
+using RPG.Core;
+using System;
 
 namespace RPG.Combat
 {
-    public class Fighter : MonoBehaviour
+    public class Fighter : MonoBehaviour, IAction
     {
-        public void Attack(CombatTarget target)
+        [SerializeField] float weaponRange = 2.0f;
+        Transform target;
+        private void Update() 
         {
-            print("Take that you short, squat peasant!");
+            if (target == null) return;
+            
+            if (target != null && !GetIsInRange())
+            {
+                GetComponent<Mover>().MoveTo(target.position );
+            }
+            else
+            {
+                GetComponent<Mover>().Cancel();
+            }
+        }
+
+        private bool GetIsInRange()
+        {
+            return Vector3.Distance(transform.position, target.position) < weaponRange;
+        }
+
+        public void Attack(CombatTarget combatTarget)
+        {
+            GetComponent<ActionScheduler>().StartAction(this);
+            target = combatTarget.transform;
+        }
+
+        public void Cancel()
+        {
+            target = null;
         }
     }
 }
