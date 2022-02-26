@@ -12,10 +12,10 @@ GameObject:
   - component: {fileID: 1600613118}
   - component: {fileID: 4857413750207759336}
   - component: {fileID: 699349941435139333}
+  - component: {fileID: 7698476955618824530}
   - component: {fileID: 7993114204544159360}
   - component: {fileID: 1600613119}
   - component: {fileID: 1600613120}
-  - component: {fileID: 7698476955618824530}
   - component: {fileID: 858543502}
   m_Layer: 0
   m_Name: Player
@@ -77,6 +77,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponRange: 2
+--- !u!114 &7698476955618824530
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7993114204544159362}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96353d4902d94964eb5e0b296831a059, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!23 &7993114204544159360
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -159,18 +171,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &7698476955618824530
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7993114204544159362}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 96353d4902d94964eb5e0b296831a059, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!136 &858543502
 CapsuleCollider:
   m_ObjectHideFlags: 0
