@@ -745,6 +745,17 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 1
   m_Center: {x: 0, y: 0, z: 0}
   m_TimeToStationary: 0.5
+--- !u!114 &985171229 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6646562490283021962, guid: 61bf974517ec1504188cf4f65536e6ef, type: 3}
+  m_PrefabInstance: {fileID: 794356676241793990}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 985171222}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f79d754c7090f64c96f215ddc83524d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1063845910
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1590,6 +1601,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 699349941435139333, guid: 2e72576baac427a438c0210bbf8b4408, type: 3}
+      propertyPath: enemyHealth
+      value: 
+      objectReference: {fileID: 985171229}
+    - target: {fileID: 699349941435139333, guid: 2e72576baac427a438c0210bbf8b4408, type: 3}
+      propertyPath: weaponRange
+      value: 1.5
+      objectReference: {fileID: 0}
     - target: {fileID: 7993114204544159362, guid: 2e72576baac427a438c0210bbf8b4408, type: 3}
       propertyPath: m_Name
       value: Player

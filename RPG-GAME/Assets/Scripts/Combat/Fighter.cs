@@ -11,8 +11,11 @@ namespace RPG.Combat
     {
         [SerializeField] float weaponRange = 2.0f;
         [SerializeField] float timeBetweenAttacks = 1f;
+        //[SerializeField] Health enemyHealth; enemy take damage my way.
+        [SerializeField] float weaponDamage = 5;
         Transform target;
         float timeSinceLastAttack = 0;
+        
         private void Update() 
         {
             timeSinceLastAttack += Time.deltaTime;
@@ -34,10 +37,22 @@ namespace RPG.Combat
         {
             if(timeSinceLastAttack > timeBetweenAttacks) 
             {
+                //This will trigger the Hit() event.
                 GetComponent<Animator>().SetTrigger("attack");
                 timeSinceLastAttack = 0;
-            }
+                //enemyHealth.TakeDamage(damage); enemy take damage my way
             
+            }
+        }
+
+        //Animation Event
+        //This method represents the specific moment in the attack animation
+        //when the hitting action takes place between the player and the enemy. 
+        //If we look at the attack animation, we can see the key of this method in about the 11th frame.
+        void Hit()
+        {
+            Health healthComponent = target.GetComponent<Health>();
+            healthComponent.TakeDamage(weaponDamage);            
         }
 
         private bool GetIsInRange()
@@ -54,12 +69,6 @@ namespace RPG.Combat
         public void Cancel()
         {
             target = null;
-        }
-
-        // Animation Event
-        void Hit()
-        {
-
         }
     }
 }
