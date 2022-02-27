@@ -52,7 +52,7 @@ namespace RPG.Combat
         void Hit()
         {
             Health healthComponent = target.GetComponent<Health>();
-            healthComponent.TakeDamage(weaponDamage);            
+            healthComponent.TakeDamage(weaponDamage);        
         }
 
         private bool GetIsInRange()
