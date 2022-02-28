@@ -37,14 +37,21 @@ namespace RPG.Combat
 
         private void AttackBehaviour()
         {
-            if(timeSinceLastAttack > timeBetweenAttacks) 
+            transform.LookAt(target.transform);
+            if(timeSinceLastAttack > timeBetweenAttacks)
             {
                 //This will trigger the Hit() event.
-                GetComponent<Animator>().SetTrigger("attack");
+                TriggerAttack();
                 timeSinceLastAttack = 0;
                 //enemyHealth.TakeDamage(damage); enemy take damage my way
-            
+
             }
+        }
+
+        private void TriggerAttack()
+        {
+            GetComponent<Animator>().ResetTrigger("stopAttack");
+            GetComponent<Animator>().SetTrigger("attack");
         }
 
         //Animation Event
@@ -53,6 +60,7 @@ namespace RPG.Combat
         //If we look at the attack animation, we can see the key of this method in about the 11th frame.
         void Hit()
         {
+            if (target == null) return;
             target.TakeDamage(weaponDamage);
         }
 
@@ -69,8 +77,21 @@ namespace RPG.Combat
 
         public void Cancel()
         {
-            GetComponent<Animator>().SetTrigger("stopAttack"); 
+            StopAttack ();
             target = null;
+        }
+
+        private void StopAttack()
+        {
+            GetComponent<Animator>().ResetTrigger("attack");
+            GetComponent<Animator>().SetTrigger("stopAttack");
+        }
+
+        public bool CanAttack(CombatTarget combatTarget)
+        {
+            if (combatTarget == null) return false;
+            Health targetToTest = combatTarget.GetComponent<Health>();
+            return targetToTest != null && !targetToTest.IsDead();
         }
     }
 }
