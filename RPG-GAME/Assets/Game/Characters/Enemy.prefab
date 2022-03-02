@@ -1,5 +1,17 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-7288743596808380631
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 889111411136451226}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96353d4902d94964eb5e0b296831a059, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &34412496259636699
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28,18 +40,6 @@ MonoBehaviour:
   weaponRange: 2
   timeBetweenAttacks: 1
   weaponDamage: 5
---- !u!114 &-7288743596808380631
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 889111411136451226}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 96353d4902d94964eb5e0b296831a059, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &7114558329446407192
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -49,12 +49,16 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1600613119, guid: 2e72576baac427a438c0210bbf8b4408, type: 3}
       propertyPath: m_Speed
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 2313799642352734395, guid: 2e72576baac427a438c0210bbf8b4408, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: ccae2dc6cf6f0c4479b782fedd0c8172, type: 2}
+    - target: {fileID: 7096521607012124501, guid: 2e72576baac427a438c0210bbf8b4408, type: 3}
+      propertyPath: suspicionTime
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 7993114204544159362, guid: 2e72576baac427a438c0210bbf8b4408, type: 3}
       propertyPath: m_Name
       value: Enemy
