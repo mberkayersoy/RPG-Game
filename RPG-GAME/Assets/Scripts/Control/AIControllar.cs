@@ -12,6 +12,7 @@ namespace RPG.Control
     {
         [SerializeField] float chaseDistance = 5f;
         [SerializeField] float suspicionTime = 3f;
+        [SerializeField] float waypointDwellTime = 2f;
         [SerializeField] PatrolPath patrolPath;
         [SerializeField] float waypointTolerance = 1f;
         Fighter fighter;
@@ -20,6 +21,7 @@ namespace RPG.Control
         Vector3 guardPosition;
         Mover mover;
         float  timeSinceLastSawPlayer = Mathf.Infinity;
+        float timeSinceArrivedAtWaypoint = Mathf.Infinity;
         int GetCurrentWaypointIndex = 0;
         private void Start() 
         {
@@ -34,24 +36,28 @@ namespace RPG.Control
             
         private void Update()
         {
-            if(health.IsDead()) return;
+            if (health.IsDead()) return;
             if (InAttackRangeOfPlayer() && fighter.CanAttack(player))
             {
-                timeSinceLastSawPlayer = 0;
                 AttackBehaviour();
             }
             else if (timeSinceLastSawPlayer < suspicionTime)
             {
                 SuspicionBehaviour();
-
             }
             else
             {
-                PatrolBehaviour(); 
+                PatrolBehaviour();
                 //fighter.Cancel();
             }
 
-            timeSinceLastSawPlayer += Time.deltaTime;                
+            UpdateTimers();
+        }
+
+        private void UpdateTimers()
+        {
+            timeSinceLastSawPlayer += Time.deltaTime;
+            timeSinceArrivedAtWaypoint += Time.deltaTime;
         }
 
         private void PatrolBehaviour() // It used to be guard behavior.
@@ -62,12 +68,17 @@ namespace RPG.Control
             {
                 if (AtWaypoint())
                 {
+                    timeSinceArrivedAtWaypoint = 0;
                     CycleWaypoint();
                 }
                 nextPosition = GetCurrentWaypoint();
             }
-
-            mover.StartMoveAction(nextPosition);
+            
+            if (timeSinceArrivedAtWaypoint > waypointDwellTime)
+            {
+                mover.StartMoveAction(nextPosition);
+            }
+            
         }
 
         private bool AtWaypoint()
@@ -93,6 +104,7 @@ namespace RPG.Control
 
         private void AttackBehaviour()
         {
+            timeSinceLastSawPlayer = 0;
             fighter.Attack(player);
         }
 
