@@ -14,7 +14,7 @@ namespace RPG.Combat
         //[SerializeField] Health enemyHealth; enemy take damage my way.
         [SerializeField] float weaponDamage = 5;
         Health target; // It used to be transformed, but we changed it to access the health class more easily. 
-                          //Since every enemy has to have health, it will not cause much trouble.
+                       //Since every enemy has to have health, it will not cause much trouble.
         float timeSinceLastAttack = Mathf.Infinity;
         
         private void Update() 
