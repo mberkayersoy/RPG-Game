@@ -39,7 +39,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponRange: 2
   timeBetweenAttacks: 1
-  weaponDamage: 5
+  weaponDamage: 10
 --- !u!1001 &7114558329446407192
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -47,6 +47,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -3902286714958108632, guid: 2e72576baac427a438c0210bbf8b4408, type: 3}
+      propertyPath: healthPoints
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 1600613119, guid: 2e72576baac427a438c0210bbf8b4408, type: 3}
       propertyPath: m_Speed
       value: 3
@@ -59,6 +63,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: bfbe2e8b331e2cc42be1591f949c0e41, type: 2}
+    - target: {fileID: 6442364039659602752, guid: 2e72576baac427a438c0210bbf8b4408, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7096521607012124501, guid: 2e72576baac427a438c0210bbf8b4408, type: 3}
       propertyPath: suspicionTime
       value: 4
