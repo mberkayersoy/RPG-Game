@@ -3,12 +3,22 @@ guid: 8502664e748e0014dbed46d89a355521
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: '#_lodyga_tatarak.001'
+    second: {fileID: 2100000, guid: 494c6d2a39887ee44aff9d8a4910483c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Lilia.001
+    second: {fileID: 2100000, guid: 720f570803d414c4db865372bb37cb0b, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
     materialSearch: 1
-    materialLocation: 1
+    materialLocation: 0
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
