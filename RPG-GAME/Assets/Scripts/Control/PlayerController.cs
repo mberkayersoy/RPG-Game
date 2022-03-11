@@ -7,7 +7,7 @@ using UnityEngine;
 namespace RPG.Control 
 {
     
-    public class PlayerControllar : MonoBehaviour
+    public class PlayerController : MonoBehaviour
     {
         Health health;
 
