@@ -11,12 +11,18 @@ namespace RPG.Combat
     {
         [SerializeField] float weaponRange = 2.0f;
         [SerializeField] float timeBetweenAttacks = 1f;
-        //[SerializeField] Health enemyHealth; enemy take damage my way.
         [SerializeField] float weaponDamage = 5;
+        [SerializeField] GameObject weaponPrefab = null;
+        [SerializeField] Transform handTransform = null;
         Health target; // It used to be transformed, but we changed it to access the health class more easily. 
                        //Since every enemy has to have health, it will not cause much trouble.
         float timeSinceLastAttack = Mathf.Infinity;
         
+        private void Start() 
+        {
+            SpawnMethod();    
+        }
+
         private void Update() 
         {
             timeSinceLastAttack += Time.deltaTime;
@@ -33,6 +39,11 @@ namespace RPG.Combat
                 GetComponent<Mover>().Cancel();
                 AttackBehaviour();
             }
+        }
+
+        private void SpawnMethod()
+        {
+            Instantiate(weaponPrefab, handTransform);
         }
 
         private void AttackBehaviour()

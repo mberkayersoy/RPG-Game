@@ -20,6 +20,7 @@ GameObject:
   - component: {fileID: 1537140834849623200}
   - component: {fileID: 7555065908953753124}
   - component: {fileID: 7096521607012124501}
+  - component: {fileID: 3561891695446628063}
   m_Layer: 0
   m_Name: Character
   m_TagString: Player
@@ -55,6 +56,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
+  maxSpeed: 6
 --- !u!114 &699349941435139333
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -228,6 +230,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   chaseDistance: 5
+  suspicionTime: 3
+  waypointDwellTime: 2
+  patrolPath: {fileID: 0}
+  waypointTolerance: 1
+  patrolSpeedFraction: 0.2
+--- !u!114 &3561891695446628063
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7993114204544159362}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ea9374b509b70f4bba37e4a2ca8cf00, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  uniqueIdentifier: 
 --- !u!1001 &6442364039659759650
 PrefabInstance:
   m_ObjectHideFlags: 0
