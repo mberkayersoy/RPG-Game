@@ -10,7 +10,8 @@ namespace RPG.Combat
     public class Fighter : MonoBehaviour, IAction
     {
         [SerializeField] float timeBetweenAttacks = 1f;
-        [SerializeField] Transform handTransform = null;
+        [SerializeField] Transform rightHandTransform = null;
+        [SerializeField] Transform leftHandTransform = null;
         [SerializeField] Weapon defaultWeapon = null;
         Health target; // It used to be transformed, but we changed it to access the health class more easily. 
                        //Since every enemy has to have health, it will not cause much trouble.
@@ -44,7 +45,7 @@ namespace RPG.Combat
         {
             currentWeapon = weapon;
             Animator animator = GetComponent<Animator>();
-            weapon.Spawn(handTransform, animator);
+            weapon.Spawn(rightHandTransform, leftHandTransform, animator);
         }
 
         private void AttackBehaviour()
@@ -74,6 +75,11 @@ namespace RPG.Combat
         {
             if (target == null) return;
             target.TakeDamage(currentWeapon.GetDamage());
+        }
+        
+        void Shoot()
+        {
+            Hit();
         }
 
         private bool GetIsInRange()
