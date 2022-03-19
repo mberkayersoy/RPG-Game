@@ -45,7 +45,7 @@ namespace RPG.Combat
             if (other.GetComponent<Health>() != target) return;
 
             target.TakeDamage(damage);
-            Destroy(gameObject, 1f);
+            Destroy(gameObject);
         }
     }
 }
