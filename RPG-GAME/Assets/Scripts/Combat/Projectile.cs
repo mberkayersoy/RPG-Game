@@ -10,16 +10,23 @@ namespace RPG.Combat
     {
         Health target = null;
         [SerializeField] float speed;
+        [SerializeField] bool isHoming = true;
         float damage = 0f;
 
-        private void Start() 
+        private void Start()
         {
-            target.GetComponent<Health>();    
+            transform.LookAt(GetAimLocation());
+
         }
         void Update()
         {
             if (target == null) return;
-            transform.LookAt(GetAimLocation());
+
+            if (isHoming && !target.IsDead())
+            {
+                transform.LookAt(GetAimLocation());
+            }
+            
             transform.Translate(Vector3.forward * speed * Time.deltaTime);
             
         }
@@ -44,6 +51,7 @@ namespace RPG.Combat
         private void OnTriggerEnter(Collider other) {
             if (other.GetComponent<Health>() != target) return;
 
+            if (target.IsDead()) return; // If enemy is dead, dont try to shoot.
             target.TakeDamage(damage);
             Destroy(gameObject);
         }

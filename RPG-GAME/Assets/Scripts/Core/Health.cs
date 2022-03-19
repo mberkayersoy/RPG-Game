@@ -10,8 +10,15 @@ namespace RPG.Core
         [SerializeField] float healthPoints = 100f;
         bool isDead = false;
 
+        Collider capsuleCollider;
+        private void Start()
+        {
+            capsuleCollider = GetComponent<Collider>();
+        }
+
         public bool IsDead()
         {
+            if (isDead == true) capsuleCollider.enabled = false;
             return isDead;
         }
 
