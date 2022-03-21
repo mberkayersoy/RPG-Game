@@ -29,6 +29,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 368961857518687373, guid: 2e72576baac427a438c0210bbf8b4408, type: 3}
+      propertyPath: characterClass
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 699349941435139333, guid: 2e72576baac427a438c0210bbf8b4408, type: 3}
       propertyPath: weapon
       value: 
