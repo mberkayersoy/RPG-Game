@@ -51,7 +51,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -3902286714958108632, guid: 2e72576baac427a438c0210bbf8b4408, type: 3}
       propertyPath: healthPoints
-      value: 30
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1600613119, guid: 2e72576baac427a438c0210bbf8b4408, type: 3}
       propertyPath: m_Speed

@@ -112,6 +112,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sword Pickup
       objectReference: {fileID: 0}
+    - target: {fileID: 8705087224120707286, guid: 8a1dae53fe6863c4ea95742359976bd5, type: 3}
+      propertyPath: m_Radius
+      value: 0.76232207
+      objectReference: {fileID: 0}
+    - target: {fileID: 8705087224120707286, guid: 8a1dae53fe6863c4ea95742359976bd5, type: 3}
+      propertyPath: m_Center.x
+      value: 0.72
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8a1dae53fe6863c4ea95742359976bd5, type: 3}
 --- !u!4 &6777808075448716534 stripped
