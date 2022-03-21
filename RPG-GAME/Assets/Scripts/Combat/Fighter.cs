@@ -13,6 +13,7 @@ namespace RPG.Combat
         [SerializeField] Transform rightHandTransform = null;
         [SerializeField] Transform leftHandTransform = null;
         [SerializeField] Weapon defaultWeapon = null;
+        [SerializeField] string defaultWeaponName = "Unarmed";
         Health target; // It used to be transformed, but we changed it to access the health class more easily. 
                        //Since every enemy has to have health, it will not cause much trouble.
         float timeSinceLastAttack = Mathf.Infinity;
@@ -20,7 +21,8 @@ namespace RPG.Combat
         
         private void Start() 
         {
-            EquipWeapon(defaultWeapon);    
+            Weapon weapon = Resources.Load<Weapon>(defaultWeaponName);
+            EquipWeapon(weapon);    
         }
 
         private void Update() 

@@ -13563,6 +13563,10 @@ PrefabInstance:
       propertyPath: defaultWeapon
       value: 
       objectReference: {fileID: 11400000, guid: 26922d37f8530e04f963c98df5e6b84c, type: 2}
+    - target: {fileID: 3865188257653524422, guid: bc7b0653aefe50247866f3b839527458, type: 3}
+      propertyPath: defaultWeaponName
+      value: Sword
+      objectReference: {fileID: 0}
     - target: {fileID: 4330069395859237315, guid: bc7b0653aefe50247866f3b839527458, type: 3}
       propertyPath: m_Controller
       value: 
