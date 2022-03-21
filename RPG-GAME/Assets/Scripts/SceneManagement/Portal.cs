@@ -48,7 +48,7 @@ public class Portal : MonoBehaviour
         yield return new WaitForSeconds(fadeWaitTime);
         yield return fader.FadeIn(fadeInTime);
 
-        Destroy(gameObject, 2f);
+        Destroy(gameObject);
     }
 
     private void UpdatePlayer(Portal otherPortal)
