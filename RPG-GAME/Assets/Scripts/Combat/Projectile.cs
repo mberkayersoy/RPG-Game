@@ -45,7 +45,7 @@ namespace RPG.Combat
 
         private Vector3 GetAimLocation()
         {
-            CapsuleCollider targetCapsule =target.GetComponent<CapsuleCollider>();
+            CapsuleCollider targetCapsule = target.GetComponent<CapsuleCollider>();
             if (targetCapsule == null)
             {
                 return target.transform.position;
