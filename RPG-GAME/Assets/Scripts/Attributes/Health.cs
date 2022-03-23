@@ -1,9 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using RPG.Stats;
+using RPG.Core;
 
-
-namespace RPG.Core
+namespace RPG.Attributes
 {
     public class Health : MonoBehaviour
     {
@@ -14,6 +15,7 @@ namespace RPG.Core
         private void Start()
         {
             capsuleCollider = GetComponent<Collider>();
+            healthPoints = GetComponent<BaseStats>().GetHealth();
         }
 
         public bool IsDead()

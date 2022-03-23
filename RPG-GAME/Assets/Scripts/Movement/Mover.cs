@@ -1,5 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
+using RPG.Attributes;
 using UnityEngine;
 using UnityEngine.AI;
 using RPG.Combat;
