@@ -10,14 +10,20 @@ namespace RPG.Attributes
 {
     public class Health : MonoBehaviour
     {
-        [SerializeField] float healthPoints = 100f;
+        [SerializeField] float regenerationPercentage = 70;
+        float healthPoints = -1f;
         bool isDead = false;
 
         Collider capsuleCollider;
         private void Start()
         {
+            GetComponent<BaseStats>().onLevelUp += RegenarateHealth;
+            if (healthPoints < 0)
+            {
+                healthPoints = GetComponent<BaseStats>().GetStat(Stat.Health);
+            }
+
             capsuleCollider = GetComponent<Collider>();
-            healthPoints = GetComponent<BaseStats>().GetStat(Stat.Health)   ;
         }
 
         public bool IsDead()
@@ -59,6 +65,12 @@ namespace RPG.Attributes
             if (experience == null) return;
 
             experience.GameExperience(GetComponent<BaseStats>().GetStat(Stat.ExperienceReward));
+        }
+
+        private void RegenarateHealth()
+        {
+            float regenHealthPoints= GetComponent<BaseStats>().GetStat(Stat.Health) * (regenerationPercentage / 100);
+            healthPoints = Mathf.Max(healthPoints, regenHealthPoints);
         }
     }
 }

@@ -11580,7 +11580,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh18874
+  m_Name: pb_Mesh18866
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -13931,8 +13931,12 @@ PrefabInstance:
       value: Sword
       objectReference: {fileID: 0}
     - target: {fileID: 4110009606494508622, guid: bc7b0653aefe50247866f3b839527458, type: 3}
+      propertyPath: progression
+      value: 
+      objectReference: {fileID: 11400000, guid: fe86a089e4c613e4eade290b6082ef32, type: 2}
+    - target: {fileID: 4110009606494508622, guid: bc7b0653aefe50247866f3b839527458, type: 3}
       propertyPath: startingLevel
-      value: 4
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4330069395859237315, guid: bc7b0653aefe50247866f3b839527458, type: 3}
       propertyPath: m_Controller
@@ -13956,11 +13960,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7090810804443244681, guid: bc7b0653aefe50247866f3b839527458, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7496074618680389017, guid: bc7b0653aefe50247866f3b839527458, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8253042697677879492, guid: bc7b0653aefe50247866f3b839527458, type: 3}
       propertyPath: m_RootOrder
